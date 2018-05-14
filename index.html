@@ -25,51 +25,65 @@
 
 	<div class="bg-img1 overlay1 size1 flex-w flex-c-m p-l-15 p-r-15" style="background-image: url('images/Antares.jpg');">
 		<div class="overlay"></div>
-		<div class="wsize1">			
-			<h3 class="l1-txt1 txt-center p-b-5">
-				COUNTDOWN TO LAUNCH
-			</h3>
-			<p class="txt-center m2-txt1 p-b-25">
-				EQUiSat has been delivered and is being integrated for launch on OA-9
-			</p>			
-			<p class="txt-center">
-				<!-- <i class="zmdi zmdi-card-giftcard cl0 fs-60"></i> -->
-				<img id="equisat" src="images/Equisat.png" />
-				<div class="learnmore-button-container">
-						<a class="learnmore-button" href="http://brownspace.org/equisat" title="">Learn More</a>
-				</div>
-			</p>
-			<div class="flex-sa cd100 bor1 p-t-10 p-l-50 p-r-50 respon1">
-				<div class="flex-col-c-m wsize2 m-b-20">
-					<span class="l1-txt2 p-b-4 days">35</span>
-					<span class="m2-txt2">Days</span>
-				</div>
-
-				<span class="l1-txt2 p-b-22">:</span>
-
-				<div class="flex-col-c-m wsize2 m-b-20">
-					<span class="l1-txt2 p-b-4 hours">17</span>
-					<span class="m2-txt2">Hours</span>
-				</div>
-
-				<span class="l1-txt2 p-b-22 respon2">:</span>
-
-				<div class="flex-col-c-m wsize2 m-b-20">
-					<span class="l1-txt2 p-b-4 minutes">50</span>
-					<span class="m2-txt2">Minutes</span>
-				</div>
-
-				<span class="l1-txt2 p-b-22">:</span>
-
-				<div class="flex-col-c-m wsize2 m-b-20">
-					<span class="l1-txt2 p-b-4 seconds">39</span>
-					<span class="m2-txt2">Seconds</span>
-				</div>
+		<div class="wsize1">
+			<div id="titles">
+				<h3 class="l1-txt1 txt-center p-b-5" id="title">
+					COUNTDOWN TO LAUNCH
+				</h3>
+				<p class="txt-center m2-txt1 p-b-25" id="subtitle">
+					EQUiSat has been delivered and is being integrated for launch on OA-9
+				</p>
 			</div>
-			<p class="txt-center m2-txt1 p-b-25">
-				Check back after launch to track EQUiSat's location and view transmission data!
-			</p>
+
+			<div id="pre-launch">
+				<p class="txt-center">
+					<!-- <i class="zmdi zmdi-card-giftcard cl0 fs-60"></i> -->
+					<img id="equisat" src="images/Equisat.png" />
+					<div class="learnmore-button-container">
+							<a class="learnmore-button" href="http://brownspace.org/equisat" title="">Learn More</a>
+					</div>
+				</p>
+
+				<div class="flex-sa cd100 bor1 p-t-10 p-l-50 p-r-50 respon1">
+					<div class="flex-col-c-m wsize2 m-b-20">
+						<span class="l1-txt2 p-b-4 days">35</span>
+						<span class="m2-txt2">Days</span>
+					</div>
+	
+					<span class="l1-txt2 p-b-22">:</span>
+	
+					<div class="flex-col-c-m wsize2 m-b-20">
+						<span class="l1-txt2 p-b-4 hours">17</span>
+						<span class="m2-txt2">Hours</span>
+					</div>
+	
+					<span class="l1-txt2 p-b-22 respon2">:</span>
+	
+					<div class="flex-col-c-m wsize2 m-b-20">
+						<span class="l1-txt2 p-b-4 minutes">50</span>
+						<span class="m2-txt2">Minutes</span>
+					</div>
+	
+					<span class="l1-txt2 p-b-22">:</span>
+	
+					<div class="flex-col-c-m wsize2 m-b-20">
+						<span class="l1-txt2 p-b-4 seconds">39</span>
+						<span class="m2-txt2">Seconds</span>
+					</div>
+				</div>
+				<p class="txt-center m2-txt1 p-b-25">
+					Check back after launch to track EQUiSat's location and view transmission data!
+				</p>
+			</div>		
 			
+			<div id="pre-deployment" style="height: 60vh;">
+				<div id="map" class="flex-sa p-t-10 p-l-50 p-r-50"></div>
+			</div>
+
+			<div id="deployed">
+				<!-- webapp goes here -->
+				<h3 class="l1-txt1 txt-center p-b-5">Uh oh! We aren't ready for this!</h3>
+			</div>
 		</div>
 	</div>
 
@@ -89,45 +103,10 @@
 	<script src="vendor/countdowntime/moment-timezone.min.js"></script>
 	<script src="vendor/countdowntime/moment-timezone-with-data.min.js"></script>
 	<script src="vendor/countdowntime/countdowntime.js"></script>
-	<script>
-		var endYEAR = 2018
-		var endMONTH = 5
-		var endDAY = 20
-		var endHOUR = 5
-		var endMINUTE = 0 
-		var endSECOND = 0
-
-		var now = new Date();
-		var endDate = new Date(endYEAR, endMONTH-1, endDAY, endHOUR, endMINUTE, endSECOND);
-
-		var delta = (endDate.getTime() - now.getTime())/ 1000;
-		var days = Math.floor(delta / (60*60*24));
-		var hours = Math.floor((delta - (days*24*60*60))/(60*60));
-		var minutes = Math.floor((delta - (days*24*60 *60) - (hours*60*60))/60);		
-		var seconds = Math.floor(delta - (days*24*60 *60) - (hours*60*60) - (minutes * 60));
-
-		$('.cd100').countdown100({
-			/*Set Endtime here*/
-			/*Endtime must be > current time*/
-			endtimeYear: 0,
-			endtimeMonth: 0,
-			endtimeDate: days,
-			endtimeHours: hours,
-			endtimeMinutes: minutes,
-			endtimeSeconds: seconds,
-			timeZone: ""
-			// ex:  timeZone: "America/New_York"
-			//go to " http://momentjs.com/timezone/ " to get timezone
-		});
-	</script>
 <!--===============================================================================================-->
 	<script src="vendor/tilt/tilt.jquery.min.js"></script>
-	<script >
-		$('.js-tilt').tilt({
-			scale: 1.1
-		})
-	</script>
 <!--===============================================================================================-->
+	<script src="js/maps.js"></script> <!-- to get this script with a confidential API key, contact jleiken -->
 	<script src="js/main.js"></script>
 
 </body>
