@@ -52,7 +52,7 @@ var endYEAR = 2018
 var endMONTH = 5
 var endDAY = 20
 var endHOUR = 5
-var endMINUTE = 0 
+var endMINUTE = 4
 var endSECOND = 0
 
 var now = new Date();
