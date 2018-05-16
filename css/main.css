@@ -216,8 +216,7 @@ input.input100 {
   font-family: OpenSans-Bold;
   font-size: 52px;
   color: #fff;
-  line-height: 1.2;
-  text-transform: uppercase;
+  line-height: 1.2;  
 }
 
 .l1-txt2 {
@@ -243,7 +242,7 @@ input.input100 {
 }
 
 .wsize2 {
-  width: 100px;
+  width: 120px;
 }
 
 .learnmore-button-container {
@@ -309,12 +308,29 @@ input.input100 {
   width: 30%;
 }
 
-#map {
-  height: 100%;
+#map{
+    height: 100%;
+    width: 100%;
 }
 
+#pre-deployment {
+  height: 100%;
+  width: 100%;
+  position: relative;  
+}
 
-
+#pre-deployment-titles {  
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto
+  top: 10px;
+  z-index: 5;
+  background-color: rgba(0, 0, 0, .3);  
+  padding: 5px;  
+  text-align: center;  
+  line-height: 30px;  
+}
 
 /* .bor1 {
   border: 2px solid rgba(255,255,255,0.35);
