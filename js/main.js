@@ -1,14 +1,16 @@
 // hide everything at the beginning so there's no weird loading choppiness
 $("#pre-launch").hide();
+$("#launch").hide();
 $("#pre-deployment").hide();
-$("#deployed").hide();
 
 const issIcon = "images/icons/iss-icon_white.png";
 
 let pvd, map, marker;
 let mapInited = false;
+let launch = new Date(Date.UTC(2018, 4, 20, 9, 4, 0));
+let postLaunch = new Date(Date.UTC(2018, 4, 20, 9, 29, 0));
 
-var prevLatlng;
+let prevLatlng;
 
 function drawISSPath(latlng, map) {
     if(prevLatlng == undefined) {
@@ -76,47 +78,11 @@ function initMap() {
     });
 }
 
-// Start the countdown here
-var endYEAR = 2018
-var endMONTH = 5
-var endDAY = 20
-var endHOUR = 5
-var endMINUTE = 4
-var endSECOND = 0
-
-var now = new Date();
-var endDate = new Date(endYEAR, endMONTH-1, endDAY, endHOUR, endMINUTE, endSECOND);
-
-var delta = (endDate.getTime() - now.getTime())/ 1000;
-var days = Math.floor(delta / (60*60*24));
-var hours = Math.floor((delta - (days*24*60*60))/(60*60));
-var minutes = Math.floor((delta - (days*24*60 *60) - (hours*60*60))/60);		
-var seconds = Math.floor(delta - (days*24*60 *60) - (hours*60*60) - (minutes * 60));
-
-$('.cd100').countdown100({
-    /*Set Endtime here*/
-    /*Endtime must be > current time*/
-    endtimeYear: 0,
-    endtimeMonth: 0,
-    endtimeDate: days,
-    endtimeHours: hours,
-    endtimeMinutes: minutes,
-    endtimeSeconds: seconds,
-    timeZone: ""
-    // ex:  timeZone: "America/New_York"
-    //go to " http://momentjs.com/timezone/ " to get timezone
-});
-
-$('.js-tilt').tilt({
-    scale: 1.1
-});
-
 $(document).ready(() => {
-    let launch = new Date("2018-05-20T09:04:00");    
-
-    // to see what the post-launch page will look like, uncomment the line below
+    // to see what the launch page will look like, uncomment the line below
     //launch = new Date("2018-04-03T00:00:01");
-    let deployment = new Date("2018-06-20T09:04:00");
+    // to see what the post-launch page will look like, uncomment the line below
+    //launch = new Date("2018-04-03T00:00:01"), postLaunch = launch;
 
     // preiodically check if it's launched or deployed
     setInterval(() => {
@@ -124,9 +90,31 @@ $(document).ready(() => {
         if (now < launch) {
             // pre-launch, hide everything other than the countdown
             $("#pre-launch").show();
-        } else if (now >= launch && now < deployment) {
-            // pre-deployment, hide the countdown and the webapp            
-            $("#pre-deployment").show();            
+
+            // update the countdown
+            let delta = (launch.getTime() - now.getTime()) / 1000;
+            let days = Math.floor(delta / (60*60*24));
+            let hours = Math.floor((delta - (days*24*60*60))/(60*60));
+            let minutes = Math.floor((delta - (days*24*60*60) - (hours*60*60))/60);		
+            let seconds = Math.floor(delta - (days*24*60*60) - (hours*60*60) - (minutes * 60));
+
+            $(".days")[0].textContent = days;
+            $(".hours")[0].textContent = hours;
+            $(".minutes")[0].textContent = minutes;
+            $(".seconds")[0].textContent = seconds;
+        } else if (now >= launch && now < postLaunch) {
+            // during launch show the live stream
+            $("#pre-launch").hide();
+            $("#launch").show();
+            document.title = "EQUiSat is launching!";
+            if (now > launch) {
+                $("#launch-countdown").hide();
+            }
+        } else {
+            // pre-deployment, hide the countdown and the webapp
+            $("#launch").hide(); // in case someone is watching as it changes
+            $("#pre-deployment").show();
+            document.title = "Awaiting deployment";
 
             // now continually update the location of the ISS on the map
             $.get("http://api.open-notify.org/iss-now.json", (res) => {
@@ -147,10 +135,6 @@ $(document).ready(() => {
                     }
                 }
             });
-        } else {
-            // post-deployment, TODO: redirect to the webapp
-            $("#titles").hide();
-            $("#deployed").show();
         }
     }, 1000);
 });
