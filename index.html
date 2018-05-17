@@ -28,13 +28,24 @@
 				<h3 class="l1-txt1 txt-center p-b-5">
 					COUNTDOWN TO LAUNCH
 				</h3>
-				<div class="progress flex-c-m">
-					<div class="pitem filled">Delivered</div>
-					<div class="pitem">Launched</div>
-					<div class="pitem">Aboard</div>
-					<div class="pitem">Deployed</div>
-				</div>
-				<br>
+				<ol class="pb">
+					<li class="pb-step is-complete">
+						<svg class="pb-icon"><use xlink:href="#checkmark-bold"/></svg>
+						<span class="pb-stepLabel">Delivered</span>
+					</li>
+					<li class="pb-step">
+						<svg class="pb-icon"><use xlink:href="#checkmark-bold"/></svg>
+						<span class="pb-stepLabel">Launched</span>
+					</li>
+					<li class="pb-step">
+						<svg class="pb-icon"><use xlink:href="#checkmark-bold"/></svg>
+						<span class="pb-stepLabel">Aboard</span>
+					</li>
+					<li class="pb-step">
+						<svg class="pb-icon"><use xlink:href="#checkmark-bold"/></svg>
+						<span class="pb-stepLabel">Deployed</span>
+					</li>
+				</ol>
 				<p class="txt-center m2-txt1 p-b-25">
 					EQUiSat has been delivered and will launch on OA-9 from Wallops Flight Facility Pad OA at 5:04 AM EDT, May 20th
 				</p>
@@ -85,13 +96,24 @@
 				<h3 class="txt-center l1-txt1 p-b-5">
 					LAUNCHING
 				</h3>
-				<div class="progress flex-c-m">
-					<div class="pitem filled">Delivered</div>
-					<div class="pitem filled">Launched</div>
-					<div class="pitem">Aboard</div>
-					<div class="pitem">Deployed</div>
-				</div>
-				<br>
+				<ol class="pb">
+					<li class="pb-step is-complete">
+						<svg class="pb-icon"><use xlink:href="#checkmark-bold"/></svg>
+						<span class="pb-stepLabel">Delivered</span>
+					</li>
+					<li class="pb-step is-complete">
+						<svg class="pb-icon"><use xlink:href="#checkmark-bold"/></svg>
+						<span class="pb-stepLabel">Launched</span>
+					</li>
+					<li class="pb-step">
+						<svg class="pb-icon"><use xlink:href="#checkmark-bold"/></svg>
+						<span class="pb-stepLabel">Aboard</span>
+					</li>
+					<li class="pb-step">
+						<svg class="pb-icon"><use xlink:href="#checkmark-bold"/></svg>
+						<span class="pb-stepLabel">Deployed</span>
+					</li>
+				</ol>
 				<p class="txt-center m2-txt1 p-b-25">
 					EQUiSat is launching on OA-9 from Wallops Flight Facility Pad OA
 				</p>
@@ -108,13 +130,24 @@
 			<h3 class="l1-txt1 txt-center p-b-5" id="title">
 				EQUiSat HAS LAUNCHED!
 			</h3>
-			<div class="progress flex-c-m">
-				<div class="pitem filled">Delivered</div>
-				<div class="pitem filled">Launched</div>
-				<div class="pitem filled">Aboard</div>
-				<div class="pitem">Deployed</div>
-			</div>
-			<br>
+			<ol class="pb">
+				<li class="pb-step is-complete">
+					<svg class="pb-icon"><use xlink:href="#checkmark-bold"/></svg>
+					<span class="pb-stepLabel">Delivered</span>
+				</li>
+				<li class="pb-step is-complete">
+					<svg class="pb-icon"><use xlink:href="#checkmark-bold"/></svg>
+					<span class="pb-stepLabel">Launched</span>
+				</li>
+				<li class="pb-step is-complete">
+					<svg class="pb-icon"><use xlink:href="#checkmark-bold"/></svg>
+					<span class="pb-stepLabel">Aboard</span>
+				</li>
+				<li class="pb-step">
+					<svg class="pb-icon"><use xlink:href="#checkmark-bold"/></svg>
+					<span class="pb-stepLabel">Deployed</span>
+				</li>
+			</ol>
 			<p class="txt-center m2-txt1 p-b-10">
 				Currently on the International Space Station awaiting deployment
 			</p>
@@ -148,6 +181,12 @@
 		</div>
 		<div id="map" class="flex-sa p-t-10 p-l-50 p-r-50"></div>
 	</div>
+
+	<svg xmlns="http://www.w3.org/2000/svg">
+		<symbol id="checkmark-bold" viewBox="0 0 24 24">
+			<path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/>
+		</symbol>
+	</svg>
 
 <!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
