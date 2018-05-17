@@ -347,6 +347,28 @@ input.input100 {
 	line-height: 30px;  
 }
 
+.progress {
+	width: 100%;
+	background-color: transparent;
+	font-size: 1em;
+	color: white;
+}
+
+.pitem {
+	width: 20%;
+	background-color: gray;
+	border-radius: 3px;
+	margin-right: 2px;
+	float: left;
+	display: block;
+	height: 20px;
+	line-height: 20px;
+}
+
+.filled {
+	background-color: #a6c8de;
+}
+
 /* .bor1 {
 	border: 2px solid rgba(255,255,255,0.35);
 }
