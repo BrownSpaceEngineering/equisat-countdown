@@ -7,8 +7,8 @@ const issIcon = "images/icons/iss-icon_white.png";
 
 let pvd, map, marker;
 let mapInited = false;
-let launch = new Date(Date.UTC(2018, 4, 20, 9, 4, 0));
-let postLaunch = new Date(Date.UTC(2018, 4, 20, 9, 39, 0));
+let launch = new Date(Date.UTC(2018, 4, 21, 8, 39, 0));
+let postLaunch = new Date(Date.UTC(2018, 4, 21, 9, 19, 0));
 
 let prevLatlng;
 
