@@ -2323,11 +2323,11 @@ iframe {border: none;}
 .w-full {width: 100%;}
 .h-full {height: 100%;}
 .max-w-full {max-width: 100%;}
+.max-w-half {max-width: 50%;}
 .max-h-full {max-height: 100%;}
 .min-w-full {min-width: 100%;}
 .min-h-full {min-height: 100%;}
-
-
+.center-margin {margin: 0 auto;}
 
 /*//////////////////////////////////////////////////////////////////
 [ BACKGROUND ]*/
