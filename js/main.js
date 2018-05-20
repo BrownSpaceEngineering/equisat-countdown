@@ -18,7 +18,7 @@ function drawISSPath(latlng, map) {
     }
     issPath = new google.maps.Polyline({
         path: [prevLatlng, latlng],
-        strokeColor: "#a6c8de",
+        strokeColor: "#6aa2c8",
         strokeOpacity: 1.0,
         strokeWeight: 2
     });
@@ -82,7 +82,7 @@ $(document).ready(() => {
     // to see what the launch page will look like, uncomment the line below
     //launch = new Date("2018-04-03T00:00:01");
     // to see what the post-launch page will look like, uncomment the line below
-    //launch = new Date("2018-04-03T00:00:01"), postLaunch = launch;
+    launch = new Date("2018-04-03T00:00:01"), postLaunch = launch;
 
     // preiodically check if it's launched or deployed
     setInterval(() => {
