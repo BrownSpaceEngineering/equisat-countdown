@@ -117,15 +117,15 @@ $(document).ready(() => {
             document.title = "Awaiting deployment";
 
             // now continually update the location of the ISS on the map
-            $.get("http://api.open-notify.org/iss-now.json", (res) => {
-                if (!res.message || res.message !== "success") {
-                    console.log("something went wrong: " + res.message);
+            $.get("https://api.wheretheiss.at/v1/satellites/25544", (res) => {
+                if (!res.latitude || res.name !== "iss") {
+                    console.log("something went wrong: " + JSON.stringify(res, null, 2));
                     if (!mapInited) {
                         $("#map").html("<p>Something went wrong tracking the ISS. Please reload this page.</p>");
                     }
                 } else {
-                    let lat = parseFloat(res.iss_position.latitude);
-                    let lng = parseFloat(res.iss_position.longitude);
+                    let lat = parseFloat(res.latitude);
+                    let lng = parseFloat(res.longitude);
                     let pos = new google.maps.LatLng(lat, lng);
                     // adjust map
                     if (mapInited) {
