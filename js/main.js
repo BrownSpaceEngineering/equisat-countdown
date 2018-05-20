@@ -117,7 +117,7 @@ $(document).ready(() => {
             document.title = "Awaiting deployment";
 
             // now continually update the location of the ISS on the map
-            $.get("http://api.open-notify.org/iss-now.json", (res) => {
+            $.get("https://api.open-notify.org/iss-now.json", (res) => {
                 if (!res.message || res.message !== "success") {
                     console.log("something went wrong: " + res.message);
                     if (!mapInited) {
