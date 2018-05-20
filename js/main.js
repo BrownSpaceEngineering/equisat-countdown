@@ -82,7 +82,7 @@ $(document).ready(() => {
     // to see what the launch page will look like, uncomment the line below
     //launch = new Date("2018-04-03T00:00:01");
     // to see what the post-launch page will look like, uncomment the line below
-    launch = new Date("2018-04-03T00:00:01"), postLaunch = launch;
+    //launch = new Date("2018-04-03T00:00:01"), postLaunch = launch;
 
     // preiodically check if it's launched or deployed
     setInterval(() => {
