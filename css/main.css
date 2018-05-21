@@ -137,7 +137,7 @@ input.input100 {
 }
 
 
-@media all and (max-width: 699px) {
+@media all and (max-width: 1000px) {
 	.alert-validate::before {
 		visibility: visible;
 		opacity: 1;
@@ -147,15 +147,13 @@ input.input100 {
 		font-size: 30px !important;    
 	}
 	.m2-txt1 {   
-		font-size: 12px !important;    
+		font-size: 14px !important;
+		padding-left: 20px !important;
+		padding-right: 20px !important;
 	}
 
 	.m2-txt2 {    
 		font-size: 13px !important;
-	}
-
-	.learnmore-button-container {
-		width:10%;  
 	}
 
 	.l1-txt2 {    
@@ -163,8 +161,17 @@ input.input100 {
 	}
 
 	.learnmore-button {    
-		padding: 10px 20\px !important;
+		padding: 10px 20px !important;
 		font-size: 13px!important;
+	}
+
+	#rightside {
+		width:100% !important;
+		height: 25vh !important;
+	}
+
+	#leftside {
+		width:100% !important;
 	}
 
 }
@@ -308,10 +315,10 @@ input.input100 {
 }
 
 #equisat-img {
-	height: 15em;
-	width:auto; /* you can use % */    
-	display:block;
-    margin:auto;
+	height: 10em;
+	width:auto; /* you can use % */	   
+	margin: 0 auto;
+	display:block;	
 }
 
 #equisat {
@@ -326,22 +333,20 @@ input.input100 {
 	width: 100%;
 }
 
-#stream-container {	
+#stream-container {
 	position:relative;
-	padding-bottom:56.25%;
-	left: 17%;
-	padding-top:30px;
-	height:0;
-	overflow:hidden;
+	height: 100%;
 	margin: 0 auto;
+	left: 20px;
+	max-width: 80%
 }
 
 #stream {
 	position: absolute;
     top: 0;
     left: 0;
-    width: 66%;
-    height: 66%;
+    width: 100%;
+    height: 100%;
     margin: 0 auto;
 }
 
@@ -460,6 +465,33 @@ input.input100 {
 .is-current .pb-icon {
   fill: #696969;
   background-color: #696969; /*#00637C;*/
+}
+
+#leftside-container {	
+}
+
+#leftside {
+	margin-top:20px;	
+	width:50%;
+	float:left;	
+}
+
+#rightside-container {	
+}
+
+#rightside {
+	margin-top:20px;
+	padding-left: 35px;
+	padding-right: 35px;
+	margin-bottom: 20px;
+	width:50%;
+	float:left;	
+	height: 45vh;
+}
+
+#bottom {
+	clear: both;
+	width:100%;	
 }
 
 /* .bor1 {
