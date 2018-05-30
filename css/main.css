@@ -511,6 +511,20 @@ input.input100 {
 	width:100%;	
 }
 
+#launch-vid-container {
+	z-index: 999;
+	position: fixed;
+    bottom: 20px;
+    right: 0;
+}
+
+#launch-video-label {
+	color: white;
+	font-family: OpenSans-Regular;
+	font-size: 12pt;
+	font-weight: bold;
+}
+
 /* .bor1 {
 	border: 2px solid rgba(255,255,255,0.35);
 }
